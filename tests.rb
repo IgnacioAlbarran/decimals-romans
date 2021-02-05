@@ -112,11 +112,109 @@ describe 'RomanNumerals' do
     expect(RomanNumerals.to_roman(3490)).to eq('MMMCDXC')
   end
 
-  it 'Should convert two-digit decimals into romans' do
-    expect(RomanNumerals.to_roman(4000)).to eq('M⊽')
+  ########################
+
+  it 'Should convert one-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('I')).to eq(1)
+  end
+
+  it 'Should convert one-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('II')).to eq(2)
+  end
+
+  it 'Should convert one-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('III')).to eq(3)
+  end
+
+  it 'Should convert one-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('IV')).to eq(4)
+  end
+
+  it 'Should convert one-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('V')).to eq(5)
+  end
+
+  it 'Should convert one-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('VI')).to eq(6)
+  end
+
+  it 'Should convert one-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('VII')).to eq(7)
+  end
+
+  it 'Should convert one-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('VIII')).to eq(8)
+  end
+
+  it 'Should convert one-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('IX')).to eq(9)
   end
 
   it 'Should convert two-digit decimals into romans' do
-    expect(RomanNumerals.to_roman(6699)).to eq('⊽MDCXCIX')
+    expect(RomanNumerals.from_roman('X')).to eq(10)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XI')).to eq(11)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XIV')).to eq(14)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XV')).to eq(15)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XVIII')).to eq(18)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XIX')).to eq(19)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XX')).to eq(20)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XXII')).to eq(22)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XXIV')).to eq(24)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XXV')).to eq(25)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XXIX')).to eq(29)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XXXIX')).to eq(39)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('XLIX')).to eq(49)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('LXVI')).to eq(66)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('DCLXVI')).to eq(666)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('MM')).to eq(2000)
+  end
+
+  it 'Should convert two-digit decimals into romans' do
+    expect(RomanNumerals.from_roman('MMMCDXC')).to eq(3490)
   end
 end
