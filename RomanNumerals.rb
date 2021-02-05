@@ -1,15 +1,17 @@
 class RomanNumerals
-  @numbers = {
+  ROMANS = {
     'units' => { 1 => 'I', 5 => 'V' },
-    'tens' => { 1 => 'X', 5 => 'L' }
+    'tens' => { 1 => 'X', 5 => 'L' },
+    'hundreds' => { 1 => 'C', 5 => 'D' },
+    'thousands' => { 1 => 'M', 5 => '⊽' }
   }
 
-  @digits = ['units', 'tens']
+  DIGITS = ['units', 'tens', 'hundreds', 'thousands']
 
   def self.to_roman(number)
     roman = ''
     number = number.to_s.split('')
-    @digits.each do |digit|
+    DIGITS.each do |digit|
       roman&.prepend(translate(digit, number.pop.to_i))
     end
     roman
@@ -19,21 +21,19 @@ class RomanNumerals
     return "number is #{roman}"
   end
 
-  private
-
   def self.translate(digit, number)
     result = ''
-    next_digit = @digits[@digits.index(digit) + 1]
+    next_digit = DIGITS[DIGITS.index(digit) + 1]
 
     if number >= 1 && number < 4
-      number.times{ result += (@numbers[digit][1]) }
+      number.times{ result += (ROMANS[digit][1]) }
     elsif number == 4
-      result += @numbers[digit][1] + (@numbers[digit][5])
+      result += ROMANS[digit][1] + (ROMANS[digit][5])
     elsif number >= 5 && number < 9
-      (result += @numbers[digit][5]) && number -= 5
-      (number%5).times{result += @numbers[digit][1]} if !number.zero?
+      (result += ROMANS[digit][5]) && number -= 5
+      (number%5).times{result += ROMANS[digit][1]} if !number.zero?
     elsif number == 9
-      result += @numbers[digit][1] + @numbers[next_digit][1]
+      result += ROMANS[digit][1] + ROMANS[next_digit][1]
     end
     result
   end
