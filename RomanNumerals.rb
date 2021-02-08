@@ -63,5 +63,3 @@ class RomanNumerals
     result
   end
 end
-
-
